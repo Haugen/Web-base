@@ -11,7 +11,7 @@ $q = $_GET['q'];
  * OK, create the user. If not redirect to the front page with errors.
  */
 if ($q == 'register-user') {
-  $error = array();
+  $info = array();
 
   // Sanitize the input.
   $email = sanitize($_POST["email"]);
@@ -21,19 +21,19 @@ if ($q == 'register-user') {
   // Check the e-mail address prpperly.
   $email = filter_var($email, FILTER_SANITIZE_SPECIAL_CHARS);
   if ($email == false) {
-    $error[] = 'Du har angivit en ogiltlig e-mail.';
+    add_message('error', 'Du har angivit en ogiltlig e-mail.');
   }
 
   // Check if password is matching.
   if ($pw != $pw_again) {
-    $error[] = 'Lösenorden stämmer inte överens med varandra.';
+    add_message('error', 'Lösenorden stämmer inte överens med varandra.');
   }
 
   // If there is an error, put the message in a session.
-  if (!empty($error)) {
-    $_SESSION['info']['error'] = $error;
+  if (!empty($_SESSION['messages'])) {
     header("Location: index.php");
   }
+
   // If there is no errors, create the user and redirect to the frontpage.
   else {
     $user = array(
@@ -42,6 +42,6 @@ if ($q == 'register-user') {
     );
 
     register_user($user);
-    $_SESSION['info']['message'] = array('Din registrering är genomförd. Välkommen in!');
+    add_message('info', 'Din registrering är genomförd. Välkommen in!');
   }
 }

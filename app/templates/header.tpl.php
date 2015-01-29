@@ -56,3 +56,7 @@ include('commons.php');
     </div>
   </nav>
   <div class="container">
+    <?php
+      if(isset($_SESSION['messages']))
+        print_info();
+    ?>

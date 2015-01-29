@@ -26,8 +26,33 @@ function db_connect() {
 }
 
 /**
- * Sanitize a string to prevent weird characters.
+ * Print messages and errors at the top of the page, if there are any.
  */
+function print_info() {
+  $info = '<div class="messages">';
+  foreach($_SESSION['messages'] as $message) {
+    $info .= '<div class="' . $message['type'] . '">' . $message['message'] . '</div>';
+  }
+
+  $info .= '</div>';
+  unset($_SESSION['messages']);
+  echo $info;
+}
+
+/**
+ * Adding a message or an error to the messages session scope to be printed in
+ * the header.
+ */
+function add_message($type, $message) {
+  $_SESSION['messages'][] = array(
+    'type' => $type,
+    'message' => $message,
+  );
+}
+
+/**
+* Sanitize a string to prevent weird characters.
+*/
 function sanitize($string) {
   $string = filter_var($string, FILTER_SANITIZE_SPECIAL_CHARS);
   return $string;
