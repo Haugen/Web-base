@@ -9,13 +9,13 @@ module.exports = function(grunt) {
         },
         files: {
           // target.css file: source.less file
-          "app/css/main.css": "app/less/main.less"
+          "app/css/main.css": "app/less/main.less",
         }
       }
     },
     watch: {
       styles: {
-        files: ['less/**/*.less'], // which files to watch
+        files: ['app/less/**/*.less'], // which files to watch
         tasks: ['less'],
         options: {
           nospawn: true

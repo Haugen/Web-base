@@ -9,8 +9,7 @@
 
   <title>Twitterino</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,6 +55,7 @@
 
     <div class="jumbotron">
       <h1>Twitterino</h1>
+      <a href="#"><h2>Hej</h2></a>
     </div>
 
   </div> <!-- /container -->
