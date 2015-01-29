@@ -49,9 +49,11 @@ include('commons.php');
             </ul>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Höger</a></li>
-        </ul>
+        <?php if (is_logged_in()) : ?>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="controller.php?q=logout-user">Logga ut</a></li>
+          </ul>
+        <?php endif; ?>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
