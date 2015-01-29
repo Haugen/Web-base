@@ -1,18 +1,16 @@
 <?php
 /**
- * Template for login form
+ * Template for login form.
  */
 ?>
-<form class="form-signin">
-  <h2 class="form-signin-heading">Please sign in</h2>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-</form>
+<div class="col-xs-6 col-xs-offset-3">
+  <form class="form-signin">
+    <h2>Välkommen, logga in</h2>
+    <label for="loginEmail" class="sr-only">E-mail</label>
+    <input type="email" id="loginEmail" class="form-control" placeholder="E-mail" required autofocus>
+    <label for="loginPassword" class="sr-only">Lösenord</label>
+    <input type="password" id="loginPassword" class="form-control" placeholder="Lösenord" required>
+    <br />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Logga in</button>
+  </form>
+</div>

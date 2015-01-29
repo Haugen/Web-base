@@ -1,3 +1,8 @@
+<?php
+
+include('commons.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
