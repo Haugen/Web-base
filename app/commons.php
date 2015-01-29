@@ -30,11 +30,13 @@ function db_connect() {
  */
 function print_info() {
   $info = '<div class="messages">';
+  // Go through the messages in the session.
   foreach($_SESSION['messages'] as $message) {
-    $info .= '<div class="' . $message['type'] . '">' . $message['message'] . '</div>';
+    $info .= '<div class="alert ' . $message['type'] . '">' . $message['message'] . '</div>';
   }
 
   $info .= '</div>';
+  // Reset the messages.
   unset($_SESSION['messages']);
   echo $info;
 }

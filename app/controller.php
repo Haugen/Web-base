@@ -21,12 +21,12 @@ if ($q == 'register-user') {
   // Check the e-mail address prpperly.
   $email = filter_var($email, FILTER_SANITIZE_SPECIAL_CHARS);
   if ($email == false) {
-    add_message('error', 'Du har angivit en ogiltlig e-mail.');
+    add_message('alert-danger', 'Du har angivit en ogiltlig e-mail.');
   }
 
   // Check if password is matching.
   if ($pw != $pw_again) {
-    add_message('error', 'Lösenorden stämmer inte överens med varandra.');
+    add_message('alert-danger', 'Lösenorden stämmer inte överens med varandra.');
   }
 
   // If there is an error, put the message in a session.
@@ -41,7 +41,8 @@ if ($q == 'register-user') {
       'password' => hash('md5', $pw)
     );
 
-    register_user($user);
-    add_message('info', 'Din registrering är genomförd. Välkommen in!');
+    //register_user($user);
+    add_message('alert-success', 'Din registrering är genomförd. Välkommen att logg in!');
+    header("Location: index.php");
   }
 }
