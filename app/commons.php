@@ -6,9 +6,6 @@ session_start();
 
 /**
  * Connect to the database.
- *
- * @return stdClass $dbcon
- *   If connected sucessfully, return the database connection.
  */
 function db_connect() {
   // Database credentials.
@@ -29,11 +26,16 @@ function db_connect() {
 }
 
 /**
-* Checks weather a user is logged in or not.
-*
-* @return bool TRUE|FALSE
-*   Return true if a user has a session running. Otherwise return false.
-*/
+ * Sanitize a string to prevent weird characters.
+ */
+function sanitize($string) {
+  $string = filter_var($string, FILTER_SANITIZE_SPECIAL_CHARS);
+  return $string;
+}
+
+/**
+ * Checks weather a user is logged in or not.
+ */
 function is_logged_in() {
   if (isset($_SESSION['user']))
     return true;

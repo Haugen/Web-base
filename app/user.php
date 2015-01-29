@@ -7,6 +7,8 @@ include('commons.php');
  *
  * @param $user
  *   An array containing user information from the registration form.
+ *     - email: The email to register.
+ *     - password: The password.
  */
 function register_user($user) {
   // Get a database connection.
