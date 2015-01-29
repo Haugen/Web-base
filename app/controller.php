@@ -2,7 +2,7 @@
 /**
  * File for receiving and handeling form requests etc.
  */
-include('commons.php');
+include_once('commons.php');
 
 $q = $_GET['q'];
 
@@ -41,8 +41,9 @@ if ($q == 'register-user') {
       'password' => hash('md5', $pw)
     );
 
-    //register_user($user);
-    add_message('alert-success', 'Din registrering är genomförd. Välkommen att logg in!');
+    include_once('user.php');
+    register_user($user);
+    add_message('alert-success', 'Din registrering är genomförd. Välkommen att logga in!');
     header("Location: index.php");
   }
 }

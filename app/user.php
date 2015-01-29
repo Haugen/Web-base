@@ -1,6 +1,6 @@
 <?php
 
-include('commons.php');
+include_once('commons.php');
 
 /**
  * Registers a user on the site.
@@ -11,8 +11,13 @@ include('commons.php');
  *     - password: The password.
  */
 function register_user($user) {
-  // Get a database connection.
   $dbcon = db_connect();
+  $email = $user['email'];
+  $pw = $user['password'];
 
-  var_dump($dbcon);
+  $sql = "INSERT INTO user (email, password)
+    VALUES ('$email', '$pw')";
+
+  mysqli_query($dbcon, $sql);
+  mysqli_close($dbcon);
 }
