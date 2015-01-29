@@ -1,16 +1,12 @@
 <?php
 
-include('header.php');
+// Include header template.
+include('templates/header.tpl.php');
 
-?>
+// Include login form
+include('templates/login-form.tpl.php');
 
-  <div class="jumbotron">
-    <h1>Twitterino</h1>
-    <a href="#"><h2>Hej</h2></a>
-  </div>
-
-<?php
-
-include('footer.php');
+// Include footer template.
+include('templates/footer.tpl.php');
 
 ?>
