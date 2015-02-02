@@ -49,16 +49,10 @@ include('commons.php');
             </ul>
           </li>
         </ul>
-        <?php if (is_logged_in()) : ?>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="controller.php?q=logout-user">Logga ut</a></li>
-          </ul>
-        <?php endif; ?>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="controller.php?q=logout-user">Höger</a></li>
+        </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
   <div class="container">
-    <?php
-      if(isset($_SESSION['messages']))
-        print_info();
-    ?>
